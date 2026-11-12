@@ -6,6 +6,10 @@ import string
 from nltk.stem.porter import PorterStemmer
 ps = PorterStemmer()
 
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+
 def transfrom_text(text):
     text = text.lower()
     text = nltk.word_tokenize(text)
@@ -39,5 +43,7 @@ if st.button('Predict'):
         st.text('Negative')
     elif result==2:
         st.text('Positive')
+    elif result==1:
+        st.text('Neutral')
     else:
         st.text('Neutral')
